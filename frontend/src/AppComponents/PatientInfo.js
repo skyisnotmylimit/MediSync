@@ -70,7 +70,7 @@ const PatientInfo = () => {
     userData = inputValue;
     // POST this userData
     console.log(userData);
-    const url = "http://localhost:8080/patient-dashboard";
+    const url = "https://vercel.com/skyisnotmylimit/medi-sync1/3fFTfRdhVEHdowcrkvPn8hyve7Gx/patient-dashboard";
     try {
       const response = await axios.post(url, userData)
       console.log("Response:", response.data);
