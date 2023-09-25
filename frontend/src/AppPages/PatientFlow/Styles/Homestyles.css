@@ -1,0 +1,66 @@
+.container{
+    position:relative;
+    padding:40px;
+} 
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box{
+    display:grid;
+    grid-template-columns: 40vw 60vw;
+}
+
+.buttons{
+    margin-top:20px;
+}
+
+.column2{
+    background-image: url('https://i.ibb.co/JHNM9fz/logo-with-no-background-removebg-preview.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+
+@media only screen and (max-width:1160px){
+    .container{
+        position:relative;
+        padding:40px;
+    } 
+    
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .get-started{
+        display:none;
+    }
+    .sub-title{
+        display:none;
+    }
+    
+    .box{
+        display:flex;
+        flex-direction: column;
+        text-align:center
+    }
+    
+    .buttons{
+        margin-top:20px;
+    }
+    
+    .column2{
+        background-image: url('https://i.ibb.co/JHNM9fz/logo-with-no-background-removebg-preview.png');
+        background-size:contain;
+        background-repeat: no-repeat; 
+        background-attachment: local;
+    }
+
+}
