@@ -11,7 +11,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const onFinish = async (values) => {
     console.log("Received values of form: ", values);
-    const url = "https://vercel.com/skyisnotmylimit/medi-sync1/3fFTfRdhVEHdowcrkvPn8hyve7Gx/signup";
+    const url = "https://medi-sync1.vercel.app/signup";
     const sendData = {
       username: values.username,
       password: values.password,
