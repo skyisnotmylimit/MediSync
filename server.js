@@ -95,7 +95,6 @@ app.post("/signup",async (req,res)=>{
   console.log(req.body);
   const userName = req.body.username;
   const passWord = req.body.password;
-  const date = new Date();
   const newUser = new user({
     username : userName,
     password : passWord
