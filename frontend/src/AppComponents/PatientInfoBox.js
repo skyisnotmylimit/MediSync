@@ -5,8 +5,9 @@ import { Button } from "antd";
 // import CloseIcon from "./CloseIcon";
 import Checkout from "./Checkout";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const PatientInfoBox = () => {
+const PatientInfoBox = async () => {
   //   const [isUserId, setIsUserId] = useState("adf235shjka");
 
   //   const thisIsUserId = () => {
@@ -16,16 +17,17 @@ const PatientInfoBox = () => {
   //   const styles = {
   //     display: isSymptom ? "none" : "inline",
   //   };
+const response = await axios.get("http://localhost:8080/patient-info");
   const userData = {
-    name: "Vaishali",
-    dob: "14-03-2004",
-    gender: "Female",
-    phoneNumber: "8851463032",
-    symptoms: ["chest pain"],
-    bloodGroup: "B+ve",
-    height: "157cm",
-    weight: "50kg",
-    uniqueId: "adf235shjka",
+    name: response.name,
+    dob: response.dob,
+    gender: response.gender,
+    phoneNumber: response.phoneNumber,
+    symptoms: response.symptoms,
+    bloodGroup: response.bloodGroup,
+    height: response.height,
+    weight: response.weight,
+    uniqueId: response.dbID,
   };
 
   const symptomTagStyle = {

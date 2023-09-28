@@ -32,7 +32,6 @@ const userAuth = {
 
 
 // Define a regular expression to validate phone numbers (example format)
-const phoneRegex = /^[0-9]{10}$/;
 
 const patientSchema = {
   name: {
@@ -74,7 +73,7 @@ const patientSchema = {
 };
 
 //connecting to server
-mongoose.connect('mongodb+srv://shubhamgupta9454666551:MediSync2023@cluster0.y2mqebh.mongodb.net/MediSync').then(()=>{
+mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true, useUnifiedTopology: true}).then(()=>{
   console.log("mongo db connected");
 }).catch((error)=>{
   console.log("Error occured",error);
@@ -139,12 +138,18 @@ app.post("/patient-dashboard",async (req,res)=>{
   res.status(200).json({code : 1,message : "success"});
 });
 
+app.get("/patient-dashboard",async (req,res)=>{
+    const query = await patientData.find({}).sort({_id:-1}).limit(1);
+    console.log(query[0]);
+    res.status(200).send(query[0]);
+});
+
 //port
 const port = process.env.PORT || 8080 ;
 //listen port
 app.listen(port, () => {
   console.log(
-    `Server running in ${process.env.NODE_MODE} Mode on port ${process.env.PORT}`
+    `Server running in ${process.env.NODE_MODE} mode on port ${process.env.PORT}`
       .bgCyan.white
   );
 });
