@@ -11,7 +11,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const onFinish = async (values) => {
     console.log("Received values of form: ", values);
-    const url = "http://localhost:8080/signup";
+    const url = "https://medi-sync-api.vercel.app/signup";
     const sendData = {
       username: values.username,
       password: values.password,

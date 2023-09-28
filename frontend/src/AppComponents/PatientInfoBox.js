@@ -17,17 +17,17 @@ const PatientInfoBox = async () => {
   //   const styles = {
   //     display: isSymptom ? "none" : "inline",
   //   };
-const response = await axios.get("http://localhost:8080/patient-info");
+const query = await axios.get("https://medi-sync-api.vercel.app/patient-dashboard");
   const userData = {
-    name: response.name,
-    dob: response.dob,
-    gender: response.gender,
-    phoneNumber: response.phoneNumber,
-    symptoms: response.symptoms,
-    bloodGroup: response.bloodGroup,
-    height: response.height,
-    weight: response.weight,
-    uniqueId: response.dbID,
+    name: query.data.name,
+    dob: query.data.dob,
+    gender: query.data.gender,
+    phoneNumber: query.data.phoneNumber,
+    symptoms: query.data.symptoms,
+    bloodGroup: query.data.bloodGroup,
+    height: query.data.height,
+    weight: query.data.weight,
+    uniqueId: query.data.dbID,
   };
 
   const symptomTagStyle = {

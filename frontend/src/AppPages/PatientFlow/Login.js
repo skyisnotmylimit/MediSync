@@ -9,7 +9,7 @@ import axios from "axios";
 //import FormItem from "antd/es/form/FormItem";
 const LoginPage = () => {
   const navigate=useNavigate();
-  const url = 'http://localhost:8080/login';
+  const url = 'https://medi-sync-api.vercel.app/login';
   const onFinish = async(values) => {
     // console.log("Received values of form: ", values);
     const sendData = {
