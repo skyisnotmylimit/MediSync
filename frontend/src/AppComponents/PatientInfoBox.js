@@ -19,15 +19,15 @@ const PatientInfoBox = async () => {
   //   };
 const query = await axios.get("https://medi-sync-api.vercel.app/patient-dashboard");
   const userData = {
-    name: query.data.name,
-    dob: query.data.dob,
-    gender: query.data.gender,
-    phoneNumber: query.data.phoneNumber,
-    symptoms: query.data.symptoms,
-    bloodGroup: query.data.bloodGroup,
-    height: query.data.height,
-    weight: query.data.weight,
-    uniqueId: query.data.dbID,
+    name: "Vaishali",
+    dob: "11-03-2004",
+    gender: "Female",
+    phoneNumber: "9875120345",
+    symptoms: ["Chest pain"],
+    bloodGroup: "B+ve",
+    height: "155cm",
+    weight: "50kg",
+    uniqueId: "Th6d562fr3",
   };
 
   const symptomTagStyle = {
